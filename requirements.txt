@@ -1,0 +1,25 @@
+# DO NOT include azure-functions-worker in this file
+# The Python Worker is managed by Azure Functions platform
+# Manually managing azure-functions-worker may cause unexpected issues
+#$env:PYTHONPATH="C:\Aswathy\Gen AI\POC\Gen AI Chat With Data"
+azure-functions
+python-dotenv
+azure-search-documents==11.4.0b11
+azure-storage-blob
+azure-identity
+azure-storage-queue
+langchain_community
+langchain
+azure-core
+python-docx
+azure-ai-formrecognizer
+azure-keyvault-secrets
+semantic-kernel
+langchain-openai
+azure-ai-ml
+openai
+azure-ai-contentsafety
+python-docx
+beautifulsoup4
+pandas
+matplotlib
