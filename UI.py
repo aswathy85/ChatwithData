@@ -56,14 +56,15 @@ elif st.session_state.chat_mode == "Chat with Files":
     st.markdown("Easily ask questions about your financial documents stored in Azure Blob Storage.")
     messages = st.session_state.file_messages  # Use file chat history
 
+
 # Display chat history
 for message in messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
 # Display charts (ONLY in "Chat with Database" mode)
 if st.session_state.chat_mode == "Chat with Database":
     for chart_data in st.session_state.charts:
+        
         if chart_data["type"] == "bar_chart":
             try:
                 df = pd.DataFrame(chart_data["content"])
@@ -126,7 +127,7 @@ def write_answer(response_dict: dict):
                     st.bar_chart(df_chart, width=width, height=height, use_container_width=False)
                 else:
                     st.line_chart(df_chart, width=width, height=height, use_container_width=False)
-                st.session_state.charts.append({"type": f"{chart_type}_chart", "width": width, "height": height, "content": df_chart.to_dict()})
+                st.session_state.charts.append({"role": "assistant","type": f"{chart_type}_chart", "width": width, "height": height, "content": df_chart.to_dict()})
             else:
                 st.error("No data to display.")
     # Check if the response is a table.
@@ -134,7 +135,7 @@ def write_answer(response_dict: dict):
         data = response_dict["table"]
         df = pd.DataFrame(data["rows"], columns=data['headers'])
         st.table(df)
-        st.session_state.charts.append({"type": "table", "content": data})
+        st.session_state.charts.append({"role": "assistant","type": "table", "content": data})
 
 def handle_sql_query(query):    
     """Executes the query using the selected database agent."""
@@ -152,7 +153,8 @@ def handle_sql_query(query):
         write_answer(response_dict)
 
     except Exception as e:
-        st.error(f"Error in SQL query: {e}")
+        #st.error(f"Error in SQL query: {e}")
+         messages.append({"role": "assistant", "content": {e}})  # Store response
      
 
 def handle_file_query(query):

@@ -68,4 +68,6 @@ def main(query_input):
     response = ask_agent(agent=agent, query=query_input)
     return response
 
-
+if __name__ == "__main__":
+    Query="show an yearly trend of revnue?"
+    print(main(Query))

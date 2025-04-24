@@ -2,19 +2,11 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "authLevel": "function",
-      "type": "httpTrigger",
+      "name": "myblob",
+      "type": "blobTrigger",
       "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
+      "path": "your-container-name/{name}",
+      "connection": "AZURE_STORAGE_CONNECTION_STRING"
     }
   ]
 }

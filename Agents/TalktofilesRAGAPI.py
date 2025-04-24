@@ -76,10 +76,10 @@ def main(question):
     """Retrieves relevant documents and generates an AI response."""
     try:
         #docs = vectorstore.similarity_search(question,search_type="mmr",  k=3,search_kwargs={"fetch_k": 10})
-        docs = vectorstore.similarity_search("agreement", k=5)
+        #docs = vectorstore.similarity_search("agreement", k=5)
           # If no relevant docs found, return a fallback response
-        if not docs:
-            print(" No relevant documents found in PGVector.")
+        #if not docs:
+            #print(" No relevant documents found in PGVector.")
         #if not docs:
            # return "I couldn't find relevant information in the provided database."       
        
