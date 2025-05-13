@@ -1,7 +1,9 @@
-.git*
-.vscode
-__azurite_db*__.json
-__blobstorage__
-__queuestorage__
+.vscode/
+__pycache__/
+.env
+.git/
+tests/
+*.log
+README.md
+venv/
 local.settings.json
-test

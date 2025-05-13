@@ -8,7 +8,7 @@ from langchain_community.utilities import SQLDatabase
 #from langchain.prompts import PromptTemplate        
 from dotenv import load_dotenv
 from langchain_core.output_parsers import JsonOutputParser
-from Agents.LLMChatAgent import main as llm_main
+from LLMChatAgent import main as llm_main
 #from CreatePandasDataframe import main as pdf_main
 
 

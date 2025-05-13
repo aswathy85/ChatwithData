@@ -3,5 +3,18 @@
   "azureFunctions.scmDoBuildDuringDeployment": true,
   "azureFunctions.projectLanguage": "Python",
   "azureFunctions.projectRuntime": "~4",
-  "debug.internalConsoleOptions": "neverOpen"
+  "debug.internalConsoleOptions": "neverOpen",
+  "appService.defaultWebAppToDeploy": "/subscriptions/57f5e225-b0f9-4d69-8b57-b73af00b3f07/resourceGroups/rgchatwithdataent/providers/Microsoft.Web/sites/ChatWithData",
+  "appService.deploySubpath": ".",
+  "appService.zipIgnorePattern": [
+    ".vscode{,/**}",
+    "__pycache__{,/**}",
+    ".env",
+    ".git{,/**}",
+    "tests{,/**}",
+    "*.log",
+    "README.md",
+    "venv{,/**}",
+    "local.settings.json"
+  ]
 }

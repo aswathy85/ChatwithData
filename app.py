@@ -3,11 +3,11 @@ import pandas as pd
 from datetime import datetime
 
 # Importing Agents
-from Agents.TalktofilesRAGAPI import main as TalktofilesRAGAPI
-from Agents.PandasAIAgent import main as PandasAIAgent
-from Agents.Langchain_SQLAgent import main as LSQLAgent
-from Agents.PandasDataframeAgent import main as PandasDataframeAgent
-from Agents.CreatePandasDataframe import main as CreatePandasDataframe
+from TalktofilesRAGAPI import main as TalktofilesRAGAPI
+#from Agents.PandasAIAgent import main as PandasAIAgent
+from Langchain_SQLAgent import main as LSQLAgent
+#from Agents.PandasDataframeAgent import main as PandasDataframeAgent
+from CreatePandasDataframe import main as CreatePandasDataframe
 
 # Set Streamlit page configuration
 st.set_page_config(page_title="💬 AI Chat Assistant", layout="wide")
@@ -142,10 +142,10 @@ def handle_sql_query(query):
     try:
         if st.session_state.database_option == "Langchain SQL Toolkit":
             response_dict = LSQLAgent(query)
-        elif st.session_state.database_option == "PandasAI":
-            response_dict = PandasAIAgent(query)
-        elif st.session_state.database_option == "Langchain Pandas Framework":
-            response_dict = PandasDataframeAgent(query)
+        #elif st.session_state.database_option == "PandasAI":
+         #   response_dict = PandasAIAgent(query)
+        #elif st.session_state.database_option == "Langchain Pandas Framework":
+         #   response_dict = PandasDataframeAgent(query)
         else:
             st.error("Invalid database selection.")
             return

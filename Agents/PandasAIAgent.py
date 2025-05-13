@@ -1,6 +1,6 @@
 from pandasai import SmartDataframe
 import pandas as pd
-from Agents.CreatePandasDataframe import main as pdf_main
+from CreatePandasDataframe import main as pdf_main
 from Agents.LLMChatAgent import main as llm_main
 from langchain_core.output_parsers import JsonOutputParser
 
