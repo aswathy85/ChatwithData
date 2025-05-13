@@ -14,7 +14,7 @@
     "tests{,/**}",
     "*.log",
     "README.md",
-    "venv{,/**}",
+    "venv{,/**}",    
     "local.settings.json"
   ]
 }
